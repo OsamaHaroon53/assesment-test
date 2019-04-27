@@ -12,4 +12,37 @@
 
 <ion-content padding>
 
+  <ion-card>
+
+    <ion-slides pager loop>
+
+      <ion-slide style="background-color: lightgreen;height: 150px"  *ngFor="let image of images">
+        <img class="img-set" [src]="image"/>
+        <!-- <h2>Slide 1</h2> -->
+      </ion-slide>
+    </ion-slides>
+
+    <ion-item>
+      <h1 item-start style="margin-top:8px;">{{pokemon?.name}}</h1>
+      <button ion-button icon-start clear item-end style="margin:0px 5px;">
+        <ion-icon name="thumbs-up"></ion-icon>
+        Like
+      </button>
+    </ion-item>
+
+    <ion-list>
+    <ion-item>
+        <h2>Height: {{pokemon?.height}}</h2>
+    </ion-item>
+    <ion-item>
+        <h2>Base Experience: {{pokemon?.base_experience}}</h2>
+    </ion-item>
+    <ion-item *ngFor="let stats of pokemon?.stats">
+        <h2>{{stats.stat.name}}: {{stats.base_stat}}</h2>
+    </ion-item>
+
+  </ion-list>
+
+  </ion-card>
+
 </ion-content>

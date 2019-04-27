@@ -6,12 +6,12 @@
 
 <ion-content padding>
   <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
-  <ion-card text-center (click)="profile(pokemon.url)" *ngFor="let pokemon of pokemons">
-    <img class="img-set" [src]="getUrl(pokemon.url)"/>
+  <ion-card text-center *ngFor="let pokemon of pokemons">
+    <img (click)="profile(pokemon.url)" class="img-set" [src]="getUrl(pokemon.url)"/>
     <ion-card-content>
       <ion-card-title>
-        {{pokemon.name}}
-        <button class="like" ion-button icon-start clear float-right (click)="Like()">
+        <span (click)="profile(pokemon.url)">{{pokemon.name}}</span>
+        <button [class]="'like '+(pokemon.like?'liked':'unlike')" ion-button icon-start clear float-right (click)="like(pokemon)">
           <ion-icon name="thumbs-up"></ion-icon>
           <div>Like</div>
         </button>

@@ -1,3 +1,16 @@
 page-liked {
-
+    .img-set{
+        margin: auto;
+        display: block;
+        width: 50%
+    }
+    button.like{
+        font-size: 1.6rem;
+        height: inherit;
+        margin-top: 8px;
+    }
+    ion-card-content{
+        background: lightgrey;
+        padding: 5px 10px !important;
+    }
 }

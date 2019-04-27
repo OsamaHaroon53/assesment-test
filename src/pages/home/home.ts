@@ -21,10 +21,10 @@ export class HomePage {
       return;
     this.http.get(this.nextUrl)
       .then(res => {
+        res['results'].like = false;
         this.pokemons.push(...res['results']);
         this.pokemonsCopy.push(...res['results']);
         this.nextUrl = res['next'];
-        this.getUrl(this.pokemons[0]['url']);
         if (scroll)
           scroll.complete()
       })
@@ -55,8 +55,9 @@ export class HomePage {
     this.navCtrl.push(ProfilePage,{url: url});
   }
 
-  like() {
-    
+  like(pokemon) {
+    pokemon.like = !pokemon.like;
+    //save to firebase logics
   }
 
 }

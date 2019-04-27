@@ -86,3 +86,11 @@ $colors: (
 
 @import "roboto";
 @import "noto-sans";
+
+.liked{
+  color: rebeccapurple !important;
+}
+
+.unlike{
+  color: grey !important;
+}

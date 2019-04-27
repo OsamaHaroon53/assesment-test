@@ -45,8 +45,9 @@ export class LikedPage {
     this.navCtrl.push(ProfilePage,{url: url});
   }
 
-  unLike() {
-    
+  unLike(i) {
+    //delete using firebase
+    this.pokemons.splice(i,1);
   }
 
 }

@@ -4,15 +4,13 @@ page-home {
         display: block;
         width: 50%
     }
-    button{
+    button.like{
         font-size: 1.6rem;
         height: inherit;
         margin-top: 8px;
     }
-    ion-card-title{
+    ion-card-content{
         background: lightgrey;
-    }
-    ion-card{
-        padding: 0;
+        padding: 5px 10px !important;
     }
 }

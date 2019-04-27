@@ -5,12 +5,13 @@
 </ion-header>
 
 <ion-content padding>
-  <ion-card text-center>
-    <img class="img-set" src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" />
+  <ion-searchbar (ionInput)="filter($event)"></ion-searchbar>
+  <ion-card text-center (click)="profile(pokemon.url)" *ngFor="let pokemon of pokemons">
+    <img class="img-set" [src]="getUrl(pokemon.url)"/>
     <ion-card-content>
       <ion-card-title>
-        bulbasaur
-        <button ion-button icon-start clear float-right>
+        {{pokemon.name}}
+        <button class="like" ion-button icon-start clear float-right (click)="Like()">
           <ion-icon name="thumbs-up"></ion-icon>
           <div>Like</div>
         </button>
@@ -21,4 +22,7 @@
       
     </ion-card-content>
   </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

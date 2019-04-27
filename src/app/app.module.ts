@@ -9,16 +9,21 @@ import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { HttpProvider } from '../providers/http/http';
+import { HttpClientModule } from '@angular/common/http';
+import { ProfilePage } from '../pages/profile/profile';
 
 @NgModule({
   declarations: [
     MyApp,
     LikedPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -26,12 +31,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     MyApp,
     LikedPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HttpProvider
   ]
 })
 export class AppModule {}
